@@ -1,0 +1,22 @@
+[package]
+name = "kanban"
+version = "0.1.0"
+authors = ["Nerdachse <nerdachse@karmaisabit.ch>"]
+edition = "2021"
+
+[dependencies]
+serde = { version = "1.0.197", features = ["derive"] }
+
+dioxus = { version = "0.5", features = ["fullstack", "router"] }
+fake = "2.9.2"
+# feature js is needed for fake to work on wasm
+uuid = {version = "1.8.0", features = ["v4", "js", "fast-rng"]}
+
+# Debug
+log = "0.4.19"
+dioxus-logger = "0.4.1"
+
+[features]
+default = []
+server = ["dioxus/axum"]
+web = ["dioxus/web"]
